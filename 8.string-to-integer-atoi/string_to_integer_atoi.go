@@ -1,48 +1,49 @@
 package althorism8
 
+import "math"
+
 func myAtoi(str string) int {
-	var sign bool = true
+	var sign string
 	var i, total int
 
 	for _, ch := range str {
-		if string(ch) == " " || string(ch) == "\t" || string(ch) == "\n" || string(ch) == "\f" || string(ch) == "\b" || string(ch) == "\r" {
-			continue
-		}
-
-		if i == 0 {
-			if string(ch) == "-" {
-				sign = false
-				continue
-			}
-
-			if string(ch) == "+" {
-				continue
-			}
-
-			if string(ch) < "0" || string(ch) > "9" {
-				return 0
-			}
-		}
-
-		if string(ch) == "." {
+		if total > math.MaxInt32 {
 			break
 		}
 
+		if i == 0 {
+			if string(ch) == " " || string(ch) == "\t" || string(ch) == "\n" || string(ch) == "\f" || string(ch) == "\b" || string(ch) == "\r" {
+				continue
+			}
+
+			if string(ch) == "-" || string(ch) == "+" {
+				if sign != "" {
+					return 0
+				}
+				i++
+				sign = string(ch)
+				continue
+			}
+		}
+
 		if string(ch) >= "0" && string(ch) <= "9" {
-			total = 10*total + (int(ch) - 48)
+			i++
+			total = 10*total + int(ch) - 48
+		} else {
+			break
 		}
 
 	}
 
-	if !sign {
-		total = -total
+	if total > math.MaxInt32 {
+		if sign == "-" {
+			return math.MinInt32
+		}
+		return math.MaxInt32
 	}
 
-	if total > 2147483647 {
-		total = 2147483648
-	} else if total < -2147483648 {
-		total = -2147483648
+	if sign == "-" {
+		return -int(total)
 	}
-
-	return total
+	return int(total)
 }
