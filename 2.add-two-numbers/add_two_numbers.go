@@ -1,7 +1,7 @@
 package algorithms2
 
 import (
-	"github.com/leetcode.go/lib"
+	"leetcode.go/lib"
 )
 
 // ListNode Definition for singly-linked list.

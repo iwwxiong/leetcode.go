@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/leetcode.go/lib"
+	"leetcode.go/lib"
 )
 
 func Test_addTwoNumbers(t *testing.T) {
