@@ -1,4 +1,4 @@
-package althorism8
+package algorithms8
 
 import "testing"
 
