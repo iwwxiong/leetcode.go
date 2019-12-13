@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
@@ -20,6 +19,8 @@ func main() {
 	// // var b int = 2147483647
 	// c = int32(d)
 	// fmt.Printf("%v\n", c)
-	fmt.Println(math.MaxInt32)
-	fmt.Println(math.MinInt32)
+	// fmt.Println(math.MaxInt32)
+	// fmt.Println(math.MinInt32)
+	b := "a"[1:]
+	fmt.Println(b)
 }
