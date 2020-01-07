@@ -1,9 +1,8 @@
 package algorithms14
 
 func longestCommonPrefix(strs []string) string {
-	var prefix string
 	if len(strs) == 0 {
-		return prefix
+		return ""
 	}
 	var first string = strs[0]
 	var flag bool = true
