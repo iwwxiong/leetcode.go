@@ -6,7 +6,7 @@ import (
 
 func main() {
 	// fmt.Println(11 / 2)
-	// fmt.Println(11 % 2)
+	// fmt.Println(10 % 2)
 	// s := "1234567890"
 	// fmt.Println(s[5:10])
 	// fmt.Println(int32(-654) % 10)
@@ -21,6 +21,9 @@ func main() {
 	// fmt.Printf("%v\n", c)
 	// fmt.Println(math.MaxInt32)
 	// fmt.Println(math.MinInt32)
-	b := "abc"[:3]
-	fmt.Println(b)
+	// b := "abc"[:3]
+	// fmt.Println(b)
+	a := [3]int{1, 2, 3}
+	// b := [3]int{1, 2, 3}
+	fmt.Println(a[:2])
 }
