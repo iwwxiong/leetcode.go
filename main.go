@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	fmt.Println(11 / 2)
-	fmt.Println(10 % 2)
+	// fmt.Println(11 / 2)
+	// fmt.Println(10 % 2)
 	// s := "1234567890"
 	// fmt.Println(s[5:10])
 	// fmt.Println(int32(-654) % 10)
@@ -27,5 +27,5 @@ func main() {
 	// b := [3]int{1, 2, 3}
 	// fmt.Println(a[:2])
 	s := "hello"
-	fmt.Println(s[0])
+	fmt.Println(s[1:len(s)])
 }
