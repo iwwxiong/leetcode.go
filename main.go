@@ -27,5 +27,5 @@ func main() {
 	// b := [3]int{1, 2, 3}
 	// fmt.Println(a[:2])
 	s := "hello"
-	fmt.Println(s[1:len(s)])
+	fmt.Println(s[0])
 }
