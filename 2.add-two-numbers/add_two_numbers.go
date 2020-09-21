@@ -8,7 +8,7 @@ import (
 type ListNode = lib.ListNode
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	var result = &ListNode{}
+	var result *ListNode = &ListNode{}
 	cur := result
 	var decimal = 0
 
@@ -37,4 +37,3 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 	return result.Next
 }
-
