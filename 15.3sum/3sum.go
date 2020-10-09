@@ -1,29 +1,55 @@
 package algorithms15
 
+func sorted(nums []int) []int {
+	var left, right []int
+	if len(nums) <= 1 {
+		return nums
+	}
+	var k int = nums[0]
+	for _, num := range nums[1:] {
+		if num < k {
+			left = append(left, num)
+		} else {
+			right = append(right, num)
+		}
+	}
+	left = sorted(left)
+	right = sorted(right)
+	left = append(left, k)
+	left = append(left, right...)
+	return left
+}
+
 func threeSum(nums []int) [][]int {
 	var length int = len(nums)
 	var result [][]int
 	if length < 3 {
 		return result
 	}
-
-	tm := make(map[int][]int)
+	nums = sorted(nums)
 	for i := 0; i < length-1; i++ {
-		for j := i + 1; j < length-1; j++ {
-			num := 0 - (nums[i] + nums[j])
-			if _, ok := tm[num]; !ok {
-				tm[num] = []int{nums[i], nums[j]}
+		// 去重
+		if i == 0 || (i > 0 && nums[i] != nums[i-1]) {
+			var hp, tp int = i + 1, length - 1 // 头尾指针
+			var num = 0 - nums[i]
+			for hp < tp {
+				if nums[hp]+nums[tp] == num {
+					result = append(result, []int{nums[i], nums[hp], nums[tp]})
+					for hp < tp && nums[hp] == nums[hp+1] {
+						hp++
+					}
+					for hp < tp && nums[tp] == nums[tp-1] {
+						tp--
+					}
+					hp++
+					tp--
+				} else if nums[hp]+nums[tp] < num {
+					hp++
+				} else {
+					tp--
+				}
 			}
 		}
 	}
-
-	for _, num := range nums[2:] {
-		if s, ok := tm[num]; ok {
-			s := append(s, num)
-			result = append(result, s)
-			delete(tm, num)
-		}
-	}
-
 	return result
 }
