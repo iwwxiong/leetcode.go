@@ -36,3 +36,24 @@ func ListNodeToArray(ln *ListNode) []int {
 	}
 	return arr
 }
+
+// SortIntSlice sort int slice
+func SortIntSlice(nums []int) []int {
+	var left, right []int
+	if len(nums) <= 1 {
+		return nums
+	}
+	var k int = nums[0]
+	for _, num := range nums[1:] {
+		if num < k {
+			left = append(left, num)
+		} else {
+			right = append(right, num)
+		}
+	}
+	left = SortIntSlice(left)
+	right = SortIntSlice(right)
+	left = append(left, k)
+	left = append(left, right...)
+	return left
+}

@@ -1,24 +1,8 @@
 package algorithms15
 
-func sorted(nums []int) []int {
-	var left, right []int
-	if len(nums) <= 1 {
-		return nums
-	}
-	var k int = nums[0]
-	for _, num := range nums[1:] {
-		if num < k {
-			left = append(left, num)
-		} else {
-			right = append(right, num)
-		}
-	}
-	left = sorted(left)
-	right = sorted(right)
-	left = append(left, k)
-	left = append(left, right...)
-	return left
-}
+import (
+	"leetcode.go/lib"
+)
 
 func threeSum(nums []int) [][]int {
 	var length int = len(nums)
@@ -26,7 +10,7 @@ func threeSum(nums []int) [][]int {
 	if length < 3 {
 		return result
 	}
-	nums = sorted(nums)
+	nums = lib.SortIntSlice(nums)
 	for i := 0; i < length-1; i++ {
 		// 去重
 		if i == 0 || (i > 0 && nums[i] != nums[i-1]) {

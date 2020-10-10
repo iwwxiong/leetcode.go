@@ -3,6 +3,8 @@ package algorithms15
 import (
 	"reflect"
 	"testing"
+
+	"leetcode.go/lib"
 )
 
 func Test_threeSum(t *testing.T) {
@@ -26,7 +28,7 @@ func Test_threeSum(t *testing.T) {
 	}
 }
 
-func Test_sorted(t *testing.T) {
+func Test_SortIntSlice(t *testing.T) {
 	type args struct {
 		nums []int
 	}
@@ -41,8 +43,8 @@ func Test_sorted(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := sorted(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("sorted() = %v, want %v", got, tt.want)
+			if got := lib.SortIntSlice(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("SortIntSlice() = %v, want %v", got, tt.want)
 			}
 		})
 	}
