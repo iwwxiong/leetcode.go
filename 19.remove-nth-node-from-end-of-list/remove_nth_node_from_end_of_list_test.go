@@ -18,7 +18,7 @@ func Test_removeNthFromEnd(t *testing.T) {
 		want *lib.ListNode
 	}{
 		// TODO: Add test cases.
-		{"[1],1->[]", args{lib.ArrayToListNode([]int{1}), 1}, lib.ArrayToListNode([]int{})},
+		{"[1],1->[]", args{lib.ArrayToListNode([]int{1}), 1}, nil},
 		{"[1,2],2->[2]", args{lib.ArrayToListNode([]int{1, 2}), 2}, lib.ArrayToListNode([]int{2})},
 		{"[1,2,3,4,5],2->[1,2,3,5]", args{lib.ArrayToListNode([]int{1, 2, 3, 4, 5}), 2}, lib.ArrayToListNode([]int{1, 2, 3, 5})},
 	}
