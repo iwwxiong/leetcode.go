@@ -42,3 +42,21 @@ func mergeKLists(lists []*lib.ListNode) *lib.ListNode {
 	}
 	return head
 }
+
+func mergeKListsV2(lists []*lib.ListNode) *lib.ListNode {
+	var length int = len(lists)
+	if length == 0 {
+		return nil
+	}
+	if length == 1 {
+		return lists[0]
+	}
+	var interval int = 1
+	for interval < length {
+		for i := 0; i+interval < length; i = i + interval*2 {
+			lists[i] = merge(lists[i], lists[i+interval])
+		}
+		interval *= 2
+	}
+	return lists[0]
+}
