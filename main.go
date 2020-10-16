@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println(1 / 2)
+	fmt.Println(11 / 2)
 	// fmt.Println(10 % 2)
 	// s := "1234567890"
 	// fmt.Println(s[5:10])
