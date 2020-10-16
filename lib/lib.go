@@ -57,3 +57,23 @@ func SortIntSlice(nums []int) []int {
 	left = append(left, right...)
 	return left
 }
+
+// 翻转链表
+func ReverseListNode(head *ListNode) *ListNode {
+	var tail *ListNode
+	for head != nil {
+		var next *ListNode = head.Next
+		head.Next = tail
+		tail = head
+		head = next
+	}
+	return tail
+}
+
+// 获取单链表尾节点
+func TailNode(head *ListNode) *ListNode {
+	for head.Next != nil {
+		head = head.Next
+	}
+	return head
+}
