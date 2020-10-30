@@ -13,6 +13,8 @@ func Test_divide(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{"10,1->10", args{10, 1}, 10},
+		{"10,3->3", args{10, 3}, 3},
 		{"-2147483648,-1->2147483647", args{-2147483648, -1}, 2147483647},
 	}
 	for _, tt := range tests {
