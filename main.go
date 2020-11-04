@@ -29,5 +29,5 @@ func main() {
 	// s := "hello"
 	// fmt.Println(s[0])
 
-	fmt.Println(^5 + 1)
+	fmt.Println(^-2147483647 + 1)
 }
