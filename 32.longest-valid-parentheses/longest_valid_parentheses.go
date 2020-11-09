@@ -5,18 +5,18 @@ func longestValidParentheses(s string) int {
 		return 0
 	}
 	var max int = 0
-	var stack []string
+	var stack []int = []int{-1}
 	for i := 0; i < len(s); i++ {
 		if string(s[i]) == "(" {
-			stack = append(stack, string(s[i]))
-		} else if string(s[i]) == ")" {
-			if len(stack) > 0 && stack[len(stack)-1] == "(" {
-				stack = stack[:len(stack)-1]
-				if max < i-len(stack)+1 {
-					max = i - len(stack) + 1
-				}
+			stack = append(stack, i)
+		} else {
+			stack = stack[:len(stack)-1]
+			if len(stack) == 0 {
+				stack = append(stack, i)
 			} else {
-				stack = append(stack, string(s[i]))
+				if max < i-stack[len(stack)-1] {
+					max = i - stack[len(stack)-1]
+				}
 			}
 		}
 	}
