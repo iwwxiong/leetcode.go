@@ -23,9 +23,9 @@ func main() {
 	// fmt.Println(math.MinInt32)
 	// b := "abc"[:3]
 	// fmt.Println(b)
-	// a := [3]int{1, 2, 3}
+	a := [3]int{1, 2, 3}
 	// b := [3]int{1, 2, 3}
-	// fmt.Println(a[:2])
+	fmt.Println(a[2])
 	// s := "hello"
 	// fmt.Println(s[0])
 
