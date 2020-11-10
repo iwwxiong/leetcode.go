@@ -22,3 +22,37 @@ func longestValidParentheses(s string) int {
 	}
 	return max
 }
+
+func longestValidParenthesesV2(s string) int {
+	var left, right, max int = 0, 0, 0
+	for i := 0; i < len(s); i++ {
+		if string(s[i]) == "(" {
+			left++
+		} else if string(s[i]) == ")" {
+			right++
+		}
+		if left == right {
+			if max < right*2 {
+				max = right * 2
+			}
+		} else if left < right {
+			left, right = 0, 0
+		}
+	}
+	left, right = 0, 0
+	for i := len(s) - 1; i > 0; i-- {
+		if string(s[i]) == ")" {
+			right++
+		} else if string(s[i]) == "(" {
+			left++
+		}
+		if left == right {
+			if max < left*2 {
+				max = left * 2
+			}
+		} else if right < left {
+			left, right = 0, 0
+		}
+	}
+	return max
+}
