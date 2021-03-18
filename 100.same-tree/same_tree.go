@@ -1,7 +1,5 @@
 package algorithms100
 
-import "leetcode.go/lib"
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -11,7 +9,11 @@ import "leetcode.go/lib"
  * }
  */
 
-type TreeNode lib.TreeNode
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
