@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	// fmt.Println(11 / 2)
-	// fmt.Println(10 % 2)
+	fmt.Println(11 / 2)
+	fmt.Println(9 % 2)
 	// s := "1234567890"
 	// fmt.Println(s[5:10])
 	// fmt.Println(int32(-654) % 10)
@@ -28,9 +28,9 @@ func main() {
 	// fmt.Println(a[2])
 	// s := "hello"
 	// fmt.Println(s[0])
-	a := "5"
-	b := []byte(a)
-	fmt.Printf("%v\n", b)
+	// a := "5"
+	// b := []byte(a)
+	// fmt.Printf("%v\n", b)
 
-	fmt.Println(^-2147483647 + 1)
+	fmt.Println([]int{1, 2, 3}[:2])
 }
