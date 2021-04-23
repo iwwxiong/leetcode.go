@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println(7 / 3 * 3)
+	// fmt.Println(7 / 3 * 3)
 	// fmt.Println(9 % 2)
 	// s := "1234567890"
 	// fmt.Println(s[5:10])
@@ -26,8 +26,8 @@ func main() {
 	// a := [3]int{1, 2, 3}
 	// b := [3]int{1, 2, 3}
 	// fmt.Println(a[2])
-	// s := "hello"
-	// fmt.Println(s[0])
+	s := "hello"
+	fmt.Println(s[1:2])
 	// a := "5"
 	// b := []byte(a)
 	// fmt.Printf("%v\n", b)
